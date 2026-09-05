@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يوني جروب | استشارات هندسية - تدعيم وترميم - تصميمات إنشائية</title>
+<meta name="description" content="يوني جروب - مكتب استشارات هندسية متخصص في المباني الخرسانية: استشارات إنشائية، تدعيم وترميم، تصميمات هندسية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2430;
+    --ink-2:#242F3D;
+    --concrete:#8C8D86;
+    --concrete-light:#E7E4DC;
+    --paper:#F4F2EC;
+    --sand:#C7B9A0;
+    --steel:#5B7A94;
+    --steel-dark:#3F5A70;
+    --line:#D4D0C5;
+    --text:#242A2E;
+    --text-soft:#5B6067;
+    --white:#FDFCFA;
+    --radius:2px;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'IBM Plex Sans Arabic', sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  h1,h2,h3,h4{margin:0;font-weight:600;line-height:1.25;}
+  p{margin:0;}
+  section{position:relative;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 30px;
+    font-family:inherit;font-size:15.5px;font-weight:500;
+    border-radius:var(--radius);
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .btn-primary{background:var(--steel-dark);color:var(--white);}
+  .btn-primary:hover{background:var(--ink);}
+  .btn-outline{border-color:var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--white);}
+  .btn-outline-light{border-color:rgba(253,252,250,.4);color:var(--white);}
+  .btn-outline-light:hover{background:var(--white);color:var(--ink);}
+
+  .eyebrow{
+    font-size:14px;color:var(--steel-dark);font-weight:600;
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  .eyebrow .rule{width:28px;height:2px;background:var(--sand);display:inline-block;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,242,236,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 32px;max-width:var(--maxw);margin:0 auto;
+  }
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo-mark{width:38px;height:38px;flex:none;}
+  .logo-text{font-size:20px;font-weight:700;color:var(--ink);letter-spacing:.5px;}
+  .logo-sub{font-size:11px;color:var(--text-soft);display:block;margin-top:1px;}
+  .nav-links{display:flex;align-items:center;gap:38px;}
+  .nav-links a{font-size:15px;color:var(--text);position:relative;padding:4px 0;}
+  .nav-links a:hover{color:var(--steel-dark);}
+  .nav-cta{display:flex;align-items:center;gap:22px;}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{width:24px;height:2px;background:var(--ink);display:block;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    overflow:hidden;
+    background:var(--ink);
+    color:var(--white);
+    padding:110px 0 90px;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative;z-index:2;}
+  .hero-grid-bg{position:absolute;inset:0;opacity:.15;z-index:1;}
+  .hero h1{
+    font-size:clamp(34px, 4.4vw, 54px);
+    color:var(--white);
+    margin-bottom:26px;
+    letter-spacing:.2px;
+  }
+  .hero h1 em{font-style:normal;color:var(--sand);}
+  .hero p.lead{
+    font-size:18px;color:#C9CDD2;max-width:520px;margin-bottom:38px;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+  .hero-meta{display:flex;gap:40px;border-top:1px solid rgba(255,255,255,.15);padding-top:26px;}
+  .hero-meta div b{display:block;font-size:26px;color:var(--white);font-weight:700;}
+  .hero-meta div span{font-size:13.5px;color:#9DA4AC;}
+  .hero-art{position:relative;}
+
+  /* ---------- Section titles ---------- */
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(26px,3vw,36px);color:var(--ink);}
+  .section-head p{color:var(--text-soft);font-size:16px;margin-top:14px;}
+
+  /* ---------- Services ---------- */
+  .services{padding:100px 0;background:var(--paper);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-card{background:var(--paper);padding:44px 36px;transition:background .25s ease;}
+  .service-card:hover{background:var(--white);}
+  .service-num{font-size:13px;color:var(--sand);font-weight:700;margin-bottom:22px;letter-spacing:1px;}
+  .service-icon{width:46px;height:46px;margin-bottom:26px;color:var(--steel-dark);}
+  .service-card h3{font-size:20px;color:var(--ink);margin-bottom:14px;}
+  .service-card p{color:var(--text-soft);font-size:15px;margin-bottom:20px;}
+  .service-card .more{font-size:14px;font-weight:600;color:var(--steel-dark);border-bottom:1px solid var(--steel-dark);padding-bottom:2px;}
+
+  /* ---------- Specialty ---------- */
+  .specialty{background:var(--concrete-light);padding:100px 0;}
+  .specialty .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center;}
+  .specialty h2{font-size:clamp(26px,3vw,34px);color:var(--ink);margin-bottom:20px;}
+  .specialty p.desc{color:var(--text-soft);font-size:16px;margin-bottom:32px;max-width:480px;}
+  .spec-list{display:flex;flex-direction:column;gap:20px;}
+  .spec-item{display:flex;gap:16px;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid var(--line);}
+  .spec-item:last-child{border-bottom:none;padding-bottom:0;}
+  .spec-item .dot{width:8px;height:8px;border-radius:50%;background:var(--steel-dark);margin-top:9px;flex:none;}
+  .spec-item h4{font-size:16.5px;color:var(--ink);margin-bottom:4px;}
+  .spec-item p{font-size:14.5px;color:var(--text-soft);}
+  .spec-art{background:var(--ink);border-radius:var(--radius);padding:20px;}
+
+  /* ---------- Projects ---------- */
+  .projects{padding:100px 0;background:var(--paper);}
+  .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .project-card{border:1px solid var(--line);background:var(--white);}
+  .project-visual{aspect-ratio:4/3;background:var(--ink-2);position:relative;overflow:hidden;}
+  .project-visual svg{position:absolute;inset:0;width:100%;height:100%;}
+  .project-tag{
+    position:absolute;top:14px;right:14px;
+    background:rgba(244,242,236,.92);color:var(--ink);
+    font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;
+  }
+  .project-body{padding:22px 24px;}
+  .project-body h4{font-size:17px;color:var(--ink);margin-bottom:6px;}
+  .project-body span{font-size:13.5px;color:var(--text-soft);}
+  .project-note{
+    grid-column:1/-1;font-size:13.5px;color:var(--text-soft);
+    background:var(--concrete-light);padding:16px 20px;border-radius:var(--radius);
+    border-right:3px solid var(--sand);
+  }
+
+  /* ---------- Process ---------- */
+  .process{background:var(--ink);color:var(--white);padding:100px 0;}
+  .process .section-head h2{color:var(--white);}
+  .process .section-head p{color:#B7BDC4;}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .process-grid::before{
+    content:"";position:absolute;top:23px;right:12.5%;left:12.5%;height:1px;
+    background:rgba(255,255,255,.18);
+  }
+  .process-step{position:relative;padding-left:20px;}
+  .process-num{
+    width:46px;height:46px;border-radius:50%;
+    background:var(--ink);border:1px solid rgba(255,255,255,.35);
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;font-weight:700;color:var(--sand);margin-bottom:24px;position:relative;z-index:2;
+  }
+  .process-step h4{font-size:17px;margin-bottom:10px;color:var(--white);}
+  .process-step p{font-size:14px;color:#AEB4BB;max-width:230px;}
+
+  /* ---------- About ---------- */
+  .about{padding:100px 0;background:var(--paper);}
+  .about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;}
+  .about h2{font-size:clamp(26px,3vw,34px);color:var(--ink);margin-bottom:24px;}
+  .about-text p{color:var(--text-soft);font-size:16px;margin-bottom:18px;}
+  .about-values{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:10px;}
+  .value-card{border-top:2px solid var(--steel-dark);padding-top:16px;}
+  .value-card h4{font-size:16px;color:var(--ink);margin-bottom:8px;}
+  .value-card p{font-size:14px;color:var(--text-soft);}
+
+  /* ---------- Contact ---------- */
+  .contact{padding:100px 0;background:var(--concrete-light);}
+  .contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;}
+  .contact h2{font-size:clamp(26px,3vw,34px);color:var(--ink);margin-bottom:20px;}
+  .contact p.lead{color:var(--text-soft);font-size:16px;margin-bottom:36px;max-width:420px;}
+  .contact-info{display:flex;flex-direction:column;gap:22px;}
+  .contact-info li{display:flex;gap:16px;align-items:flex-start;}
+  .contact-info .ic{width:22px;height:22px;color:var(--steel-dark);flex:none;margin-top:2px;}
+  .contact-info b{display:block;font-size:15px;color:var(--ink);margin-bottom:2px;}
+  .contact-info span{font-size:14.5px;color:var(--text-soft);}
+
+  form.contact-form{background:var(--white);border:1px solid var(--line);padding:36px;border-radius:var(--radius);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .field{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+  .field label{font-size:13.5px;color:var(--text-soft);}
+  .field input,.field textarea,.field select{
+    font-family:inherit;font-size:15px;padding:13px 14px;
+    border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--paper);color:var(--text);
+  }
+  .field textarea{resize:vertical;min-height:110px;}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:2px solid var(--steel-dark);outline-offset:1px;}
+  .form-note{font-size:13px;color:var(--text-soft);margin-top:14px;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:#AEB4BB;padding:56px 0 28px;}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:24px;}
+  .footer-logo{display:flex;align-items:center;gap:10px;}
+  .footer-logo .logo-text{color:var(--white);font-size:18px;}
+  .footer-links{display:flex;gap:32px;flex-wrap:wrap;}
+  .footer-links a{font-size:14.5px;}
+  .footer-links a:hover{color:var(--white);}
+  .footer-bottom{display:flex;justify-content:space-between;font-size:13px;color:#7E858C;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:960px){
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-art{display:none;}
+    .service-grid{grid-template-columns:1fr;}
+    .specialty .wrap{grid-template-columns:1fr;}
+    .project-grid{grid-template-columns:1fr 1fr;}
+    .process-grid{grid-template-columns:1fr 1fr;row-gap:40px;}
+    .process-grid::before{display:none;}
+    .about .wrap{grid-template-columns:1fr;}
+    .about-values{grid-template-columns:1fr;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .hero{padding:80px 0 60px;}
+    .hero-meta{gap:24px;flex-wrap:wrap;}
+    .project-grid{grid-template-columns:1fr;}
+    .footer-top{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none">
+        <rect x="6" y="6" width="36" height="36" stroke="#1B2430" stroke-width="2"/>
+        <path d="M14 34V18L24 12L34 18V34" stroke="#5B7A94" stroke-width="2"/>
+        <path d="M14 34H34" stroke="#1B2430" stroke-width="2"/>
+        <path d="M20 34V24H28V34" stroke="#C7B9A0" stroke-width="2"/>
+      </svg>
+      <div>
+        <span class="logo-text">يوني جروب</span>
+        <span class="logo-sub">استشارات هندسية إنشائية</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#specialty">تخصصنا</a>
+      <a href="#projects">أعمالنا</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-outline" style="padding:11px 22px;font-size:14px;">اطلب استشارة</a>
+      <button class="burger" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <svg class="hero-grid-bg" viewBox="0 0 1200 700" preserveAspectRatio="none">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M40 0H0V40" fill="none" stroke="#5B7A94" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="1200" height="700" fill="url(#grid)"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1>نُحصّن المباني الخرسانية <em>من الأساس حتى السقف</em></h1>
+      <p class="lead">يوني جروب مكتب استشارات هندسية متخصص في تقييم وتدعيم وتصميم المنشآت الخرسانية — من الفحص الإنشائي الدقيق إلى حلول الترميم والتقوية المتكاملة.</p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-primary">استعرض خدماتنا</a>
+        <a href="#contact" class="btn btn-outline-light">تواصل مع المكتب</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>+120</b><span>مشروع تم تنفيذه</span></div>
+        <div><b>+15</b><span>سنة خبرة ميدانية</span></div>
+        <div><b>100%</b><span>تركيز على المنشآت الخرسانية</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 420 480" fill="none">
+        <rect x="150" y="40" width="120" height="400" stroke="#C7B9A0" stroke-width="2"/>
+        <line x1="150" y1="90" x2="270" y2="90" stroke="#C7B9A0" stroke-width="1"/>
+        <line x1="150" y1="140" x2="270" y2="140" stroke="#5B7A94" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="150" y1="190" x2="270" y2="190" stroke="#C7B9A0" stroke-width="1"/>
+        <line x1="150" y1="240" x2="270" y2="240" stroke="#5B7A94" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="150" y1="290" x2="270" y2="290" stroke="#C7B9A0" stroke-width="1"/>
+        <line x1="150" y1="340" x2="270" y2="340" stroke="#5B7A94" stroke-width="1" stroke-dasharray="4 4"/>
+        <!-- rebar cage -->
+        <circle cx="168" cy="60" r="4" fill="#8C8D86"/>
+        <circle cx="252" cy="60" r="4" fill="#8C8D86"/>
+        <circle cx="168" cy="420" r="4" fill="#8C8D86"/>
+        <circle cx="252" cy="420" r="4" fill="#8C8D86"/>
+        <line x1="168" y1="60" x2="168" y2="420" stroke="#8C8D86" stroke-width="1.5"/>
+        <line x1="252" y1="60" x2="252" y2="420" stroke="#8C8D86" stroke-width="1.5"/>
+        <!-- dimension marks -->
+        <line x1="120" y1="40" x2="120" y2="440" stroke="#FDFCFA" stroke-width="1" opacity=".3"/>
+        <line x1="112" y1="40" x2="128" y2="40" stroke="#FDFCFA" stroke-width="1" opacity=".3"/>
+        <line x1="112" y1="440" x2="128" y2="440" stroke="#FDFCFA" stroke-width="1" opacity=".3"/>
+        <text x="90" y="245" fill="#8C8D86" font-size="11" transform="rotate(-90 90 245)" font-family="IBM Plex Sans Arabic">ارتفاع العمود</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="rule"></span>خدماتنا</div>
+      <h2>ثلاثة تخصصات، هدف واحد: منشآت آمنة ومستدامة</h2>
+      <p>نقدم خدماتنا لأصحاب المباني والمقاولين والجهات الاستشارية، بدءًا من الفحص الأولي وحتى التنفيذ والمتابعة.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M8 40L20 20L28 30L40 10" stroke="currentColor" stroke-width="2"/>
+          <circle cx="20" cy="20" r="2.5" fill="currentColor"/>
+          <circle cx="28" cy="30" r="2.5" fill="currentColor"/>
+          <circle cx="40" cy="10" r="2.5" fill="currentColor"/>
+          <path d="M6 40H42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <h3>استشارات هندسية</h3>
+        <p>دراسة الحالة الإنشائية للمبنى، تحليل الأحمال والإجهادات، وتقديم تقارير فنية معتمدة تدعم قرارات المالك أو المقاول.</p>
+        <a href="#contact" class="more">اطلب دراسة حالة</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+          <rect x="18" y="6" width="12" height="36" stroke="currentColor" stroke-width="2"/>
+          <path d="M18 20L10 24L18 28" stroke="currentColor" stroke-width="2"/>
+          <path d="M30 20L38 24L30 28" stroke="currentColor" stroke-width="2"/>
+          <path d="M20 8L28 40" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/>
+        </svg>
+        <h3>تدعيم وترميم</h3>
+        <p>معالجة الشروخ والتصدعات، حقن الخرسانة، تدعيم الأعمدة والكمرات والأساسات، وإعادة التأهيل الإنشائي للمباني القديمة.</p>
+        <a href="#contact" class="more">اطلب معاينة</a>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+          <rect x="6" y="6" width="36" height="36" stroke="currentColor" stroke-width="2"/>
+          <line x1="6" y1="18" x2="42" y2="18" stroke="currentColor" stroke-width="1"/>
+          <line x1="18" y1="18" x2="18" y2="42" stroke="currentColor" stroke-width="1"/>
+          <line x1="30" y1="6" x2="30" y2="18" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <h3>تصميمات إنشائية</h3>
+        <p>تصميم المنشآت الخرسانية الجديدة من الأساسات حتى الأسقف، مع مخططات تنفيذية دقيقة متوافقة مع الأكواد المصرية والدولية.</p>
+        <a href="#contact" class="more">ابدأ مشروعك</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="specialty" id="specialty">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="rule"></span>تخصصنا الدقيق</div>
+      <h2>خبرة متعمقة في المنشآت الخرسانية تحديدًا</h2>
+      <p class="desc">لسنا مكتبًا عامًا يقدم كل شيء — تركيزنا الكامل على سلوك الخرسانة المسلحة تحت الأحمال، وأسباب تدهورها، وأفضل طرق تقويتها دون المساس بالسلامة الإنشائية للمبنى.</p>
+      <div class="spec-list">
+        <div class="spec-item">
+          <span class="dot"></span>
+          <div><h4>فحص الإجهادات والتشققات</h4><p>تحديد أسباب الشروخ الإنشائية وتصنيف خطورتها قبل اتخاذ أي قرار تنفيذي.</p></div>
+        </div>
+        <div class="spec-item">
+          <span class="dot"></span>
+          <div><h4>حقن الشروخ ومعالجة التآكل</h4><p>حماية حديد التسليح من الصدأ ومعالجة تسرب المياه داخل العناصر الخرسانية.</p></div>
+        </div>
+        <div class="spec-item">
+          <span class="dot"></span>
+          <div><h4>تدعيم الأساسات والقواعد</h4><p>حلول لرفع كفاءة التربة والأساسات في حالات الهبوط أو زيادة الأحمال.</p></div>
+        </div>
+        <div class="spec-item">
+          <span class="dot"></span>
+          <div><h4>تقوية الأعمدة والكمرات</h4><p>باستخدام تكسيات الكربون فايبر أو التغليف الخرساني أو المعدني حسب الحالة.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="spec-art">
+      <svg viewBox="0 0 460 420" fill="none">
+        <rect x="0" y="0" width="460" height="420" fill="#1B2430"/>
+        <rect x="180" y="30" width="100" height="360" stroke="#C7B9A0" stroke-width="2"/>
+        <!-- stirrups -->
+        <g stroke="#5B7A94" stroke-width="1.4">
+          <rect x="195" y="50" width="70" height="26"/>
+          <rect x="195" y="110" width="70" height="26"/>
+          <rect x="195" y="170" width="70" height="26"/>
+          <rect x="195" y="230" width="70" height="26"/>
+          <rect x="195" y="290" width="70" height="26"/>
+          <rect x="195" y="340" width="70" height="26"/>
+        </g>
+        <!-- main bars -->
+        <circle cx="200" cy="55" r="4.5" fill="#8C8D86"/>
+        <circle cx="260" cy="55" r="4.5" fill="#8C8D86"/>
+        <circle cx="200" cy="360" r="4.5" fill="#8C8D86"/>
+        <circle cx="260" cy="360" r="4.5" fill="#8C8D86"/>
+        <line x1="200" y1="55" x2="200" y2="360" stroke="#8C8D86" stroke-width="1.6"/>
+        <line x1="260" y1="55" x2="260" y2="360" stroke="#8C8D86" stroke-width="1.6"/>
+        <!-- crack -->
+        <path d="M180 150 L200 175 L188 195 L205 220" stroke="#B25B4B" stroke-width="1.6" fill="none"/>
+        <!-- callout -->
+        <line x1="150" y1="180" x2="180" y2="180" stroke="#FDFCFA" stroke-width="0.7" opacity=".5"/>
+        <text x="30" y="184" fill="#C9CDD2" font-size="11" font-family="IBM Plex Sans Arabic">موضع الشرخ الإنشائي</text>
+        <text x="290" y="60" fill="#C9CDD2" font-size="11" font-family="IBM Plex Sans Arabic">حديد رئيسي</text>
+        <text x="290" y="118" fill="#C9CDD2" font-size="11" font-family="IBM Plex Sans Arabic">كانات التسليح</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="rule"></span>أعمالنا</div>
+      <h2>نماذج من مشاريع سابقة</h2>
+      <p>مجموعة مختارة من أعمال التدعيم والترميم والتصميم التي أشرف عليها فريق يوني جروب.</p>
+    </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-visual">
+          <svg viewBox="0 0 300 225" preserveAspectRatio="none">
+            <rect width="300" height="225" fill="#242F3D"/>
+            <g stroke="#5B7A94" stroke-width="1" opacity=".5">
+              <line x1="0" y1="45" x2="300" y2="45"/><line x1="0" y1="90" x2="300" y2="90"/>
+              <line x1="0" y1="135" x2="300" y2="135"/><line x1="0" y1="180" x2="300" y2="180"/>
+              <line x1="60" y1="0" x2="60" y2="225"/><line x1="120" y1="0" x2="120" y2="225"/>
+              <line x1="180" y1="0" x2="180" y2="225"/><line x1="240" y1="0" x2="240" y2="225"/>
+            </g>
+            <rect x="90" y="40" width="120" height="150" fill="none" stroke="#C7B9A0" stroke-width="2"/>
+            <line x1="90" y1="90" x2="210" y2="90" stroke="#C7B9A0" stroke-width="1.5"/>
+            <line x1="90" y1="140" x2="210" y2="140" stroke="#C7B9A0" stroke-width="1.5"/>
+          </svg>
+          <span class="project-tag">تدعيم إنشائي</span>
+        </div>
+        <div class="project-body"><h4>تدعيم عمارة سكنية - 8 طوابق</h4><span>الجيزة · تقوية أعمدة وكمرات</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-visual">
+          <svg viewBox="0 0 300 225" preserveAspectRatio="none">
+            <rect width="300" height="225" fill="#242F3D"/>
+            <g stroke="#8C8D86" stroke-width="1.4">
+              <path d="M40 190 L40 60 L150 20 L260 60 L260 190" fill="none"/>
+              <line x1="40" y1="190" x2="260" y2="190"/>
+            </g>
+            <path d="M100 140 L120 155 L110 170" stroke="#B25B4B" stroke-width="1.6" fill="none"/>
+          </svg>
+          <span class="project-tag">ترميم وحقن شروخ</span>
+        </div>
+        <div class="project-body"><h4>معالجة تشققات مبنى إداري</h4><span>القاهرة · حقن شروخ وعزل</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-visual">
+          <svg viewBox="0 0 300 225" preserveAspectRatio="none">
+            <rect width="300" height="225" fill="#242F3D"/>
+            <g stroke="#C7B9A0" stroke-width="1.4">
+              <rect x="60" y="30" width="50" height="165"/>
+              <rect x="130" y="30" width="50" height="165"/>
+              <rect x="200" y="30" width="50" height="165"/>
+            </g>
+            <line x1="60" y1="80" x2="250" y2="80" stroke="#5B7A94" stroke-width="1"/>
+            <line x1="60" y1="130" x2="250" y2="130" stroke="#5B7A94" stroke-width="1"/>
+          </svg>
+          <span class="project-tag">تصميم إنشائي</span>
+        </div>
+        <div class="project-body"><h4>تصميم هيكل مبنى تجاري جديد</h4><span>6 أكتوبر · تصميم كامل من الأساس</span></div>
+      </div>
+      <p class="project-note">الصور المعروضة رسومات توضيحية مؤقتة — يُفضّل استبدالها بصور فعلية من موقع المشاريع قبل نشر الموقع.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:#C7B9A0;"><span class="rule"></span>منهجية العمل</div>
+      <h2>من المعاينة إلى التسليم في 4 خطوات</h2>
+      <p>خطوات واضحة نلتزم بها في كل مشروع، مهما كان حجمه.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step"><div class="process-num">١</div><h4>المعاينة والفحص</h4><p>زيارة ميدانية وتوثيق الحالة الإنشائية الحالية للمبنى.</p></div>
+      <div class="process-step"><div class="process-num">٢</div><h4>التقييم الإنشائي</h4><p>تحليل الأحمال وتحديد مواطن الضعف وأسبابها الجذرية.</p></div>
+      <div class="process-step"><div class="process-num">٣</div><h4>التصميم والحل</h4><p>إعداد المخططات وتحديد أنسب طرق التدعيم أو التصميم.</p></div>
+      <div class="process-step"><div class="process-num">٤</div><h4>التنفيذ والمتابعة</h4><p>إشراف هندسي كامل حتى التسليم النهائي للمشروع.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-text">
+      <div class="eyebrow"><span class="rule"></span>من نحن</div>
+      <h2>يوني جروب</h2>
+      <p>مكتب استشارات هندسية يجمع بين الخبرة الميدانية والدقة الفنية في التعامل مع المنشآت الخرسانية. نعمل جنبًا إلى جنب مع الملاك والمقاولين لتقديم حلول هندسية آمنة وعملية.</p>
+      <p>فريقنا مكوّن من مهندسين إنشائيين متخصصين، نعتمد في عملنا على الأكواد الهندسية المعتمدة والتقنيات الحديثة في الفحص والتدعيم.</p>
+    </div>
+    <div class="about-values">
+      <div class="value-card"><h4>الدقة الفنية</h4><p>كل قرار تدعيم أو تصميم مبني على حسابات وتحليل إنشائي موثق.</p></div>
+      <div class="value-card"><h4>الشفافية</h4><p>تقارير واضحة للعميل توضح الحالة والحل المقترح والتكلفة المتوقعة.</p></div>
+      <div class="value-card"><h4>السلامة أولًا</h4><p>لا حل يُقترح إلا بعد التأكد من أثره الكامل على سلامة المنشأ.</p></div>
+      <div class="value-card"><h4>متابعة ميدانية</h4><p>إشراف هندسي حاضر في موقع التنفيذ من البداية للنهاية.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="rule"></span>تواصل معنا</div>
+      <h2>عندك مبنى يحتاج تقييم أو تدعيم؟</h2>
+      <p class="lead">تواصل مع فريق يوني جروب وهنرجعلك بأقرب موعد معاينة مناسب.</p>
+      <ul class="contact-info">
+        <li>
+          <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M4 5H8L10 10L7.5 11.5C8.5 14 10 15.5 12.5 16.5L14 14L19 16V20C19 20.5 18.5 21 18 21C10 21 3 14 3 6C3 5.5 3.5 5 4 5Z" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div><b>اتصل بنا</b><span>01000000000 (رقم مؤقت - برجاء التحديث)</span></div>
+        </li>
+        <li>
+          <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 6H21V18H3V6Z" stroke="currentColor" stroke-width="1.6"/><path d="M3 6L12 13L21 6" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div><b>راسلنا</b><span>info@unigroup-eng.com (بريد مؤقت - برجاء التحديث)</span></div>
+        </li>
+        <li>
+          <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 19 14.5 19 9.5C19 5.9 15.9 3 12 3C8.1 3 5 5.9 5 9.5C5 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div><b>الموقع</b><span>القاهرة، جمهورية مصر العربية (عنوان مؤقت - برجاء التحديث)</span></div>
+        </li>
+      </ul>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="field"><label for="name">الاسم</label><input id="name" type="text" required placeholder="اسمك بالكامل"></div>
+        <div class="field"><label for="phone">رقم الهاتف</label><input id="phone" type="tel" required placeholder="01xxxxxxxxx"></div>
+      </div>
+      <div class="field"><label for="service">نوع الخدمة</label>
+        <select id="service">
+          <option>استشارة هندسية</option>
+          <option>تدعيم وترميم</option>
+          <option>تصميم إنشائي</option>
+          <option>أخرى</option>
+        </select>
+      </div>
+      <div class="field"><label for="msg">تفاصيل الطلب</label><textarea id="msg" placeholder="اكتب وصفًا مختصرًا لحالة المبنى أو المشروع"></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">إرسال الطلب</button>
+      <p class="form-note">هذا النموذج تجريبي حاليًا — يحتاج ربطًا بخدمة بريد أو نظام استقبال طلبات ليصلك فعليًا.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+          <rect x="6" y="6" width="36" height="36" stroke="#FDFCFA" stroke-width="2"/>
+          <path d="M14 34V18L24 12L34 18V34" stroke="#5B7A94" stroke-width="2"/>
+        </svg>
+        <span class="logo-text">يوني جروب</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#specialty">تخصصنا</a></li>
+        <li><a href="#projects">أعمالنا</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> يوني جروب لاستشارات المباني الخرسانية. جميع الحقوق محفوظة.</span>
+      <span>تصميم وتطوير الموقع بمساعدة Claude</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('شكرًا لتواصلك مع يوني جروب. سيتم الرد على طلبك قريبًا.\n\n(ملحوظة: النموذج تجريبي ويحتاج ربطًا فعليًا بخدمة استقبال بريد)');
+    this.reset();
+  });
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('.nav-links');
+  burger.addEventListener('click', function(){
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.cssText += open ? '' : 'position:absolute;top:100%;right:0;left:0;background:#F4F2EC;flex-direction:column;padding:20px 32px;gap:18px;border-bottom:1px solid #D4D0C5;';
+  });
+</script>
+
+</body>
+</html>

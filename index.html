@@ -551,22 +551,22 @@
         <iframe src="https://www.google.com/maps?q=29.9038938,31.0748274&z=16&output=embed" loading="lazy" title="موقع يوني جروب"></iframe>
       </div>
     </div>
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mnpqbwvk" method="POST">
       <div class="form-row">
-        <div class="field"><label for="name">الاسم</label><input id="name" type="text" required placeholder="اسمك بالكامل"></div>
-        <div class="field"><label for="phone">رقم الهاتف</label><input id="phone" type="tel" required placeholder="01xxxxxxxxx"></div>
+        <div class="field"><label for="name">الاسم</label><input id="name" name="الاسم" type="text" required placeholder="اسمك بالكامل"></div>
+        <div class="field"><label for="phone">رقم الهاتف</label><input id="phone" name="رقم الهاتف" type="tel" required placeholder="01xxxxxxxxx"></div>
       </div>
       <div class="field"><label for="service">نوع الخدمة</label>
-        <select id="service">
+        <select id="service" name="نوع الخدمة">
           <option>استشارة هندسية</option>
           <option>تدعيم وترميم</option>
           <option>تصميم إنشائي</option>
           <option>أخرى</option>
         </select>
       </div>
-      <div class="field"><label for="msg">تفاصيل الطلب</label><textarea id="msg" placeholder="اكتب وصفًا مختصرًا لحالة المبنى أو المشروع"></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">إرسال الطلب</button>
-      <p class="form-note">هذا النموذج تجريبي حاليًا — يحتاج ربطًا بخدمة بريد أو نظام استقبال طلبات ليصلك فعليًا.</p>
+      <div class="field"><label for="msg">تفاصيل الطلب</label><textarea id="msg" name="تفاصيل الطلب" placeholder="اكتب وصفًا مختصرًا لحالة المبنى أو المشروع"></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="submitBtn">إرسال الطلب</button>
+      <p class="form-note" id="formStatus"></p>
     </form>
   </div>
 </section>
@@ -595,10 +595,34 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('contactForm').addEventListener('submit', function(e){
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
+  contactForm.addEventListener('submit', function(e){
     e.preventDefault();
-    alert('شكرًا لتواصلك مع يوني جروب. سيتم الرد على طلبك قريبًا.\n\n(ملحوظة: النموذج تجريبي ويحتاج ربطًا فعليًا بخدمة استقبال بريد)');
-    this.reset();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'جارٍ الإرسال...';
+    formStatus.textContent = '';
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if(response.ok){
+        formStatus.textContent = 'تم إرسال طلبك بنجاح، هنتواصل معاك قريبًا.';
+        formStatus.style.color = '#2E7D4F';
+        contactForm.reset();
+      } else {
+        formStatus.textContent = 'حصل خطأ أثناء الإرسال، برجاء المحاولة مرة أخرى أو التواصل عبر الهاتف.';
+        formStatus.style.color = '#B23A3A';
+      }
+    }).catch(function(){
+      formStatus.textContent = 'حصل خطأ في الاتصال، برجاء المحاولة مرة أخرى.';
+      formStatus.style.color = '#B23A3A';
+    }).finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'إرسال الطلب';
+    });
   });
   const burger = document.querySelector('.burger');
   const navLinks = document.querySelector('.nav-links');

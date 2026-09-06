@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>يوني جروب | استشارات هندسية - تدعيم وترميم - تصميمات إنشائية</title>
 <meta name="description" content="يوني جروب - مكتب استشارات هندسية متخصص في المباني الخرسانية: استشارات إنشائية، تدعيم وترميم، تصميمات هندسية.">
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -200,6 +201,8 @@
   .contact-info .ic{width:22px;height:22px;color:var(--steel-dark);flex:none;margin-top:2px;}
   .contact-info b{display:block;font-size:15px;color:var(--ink);margin-bottom:2px;}
   .contact-info span{font-size:14.5px;color:var(--text-soft);}
+  .map-embed{margin-top:28px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+  .map-embed iframe{width:100%;height:220px;border:0;display:block;filter:grayscale(.15) contrast(1.05);}
 
   form.contact-form{background:var(--white);border:1px solid var(--line);padding:36px;border-radius:var(--radius);}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
@@ -254,12 +257,7 @@
 <header>
   <div class="nav">
     <div class="logo">
-      <svg class="logo-mark" viewBox="0 0 48 48" fill="none">
-        <rect x="6" y="6" width="36" height="36" stroke="#1B2430" stroke-width="2"/>
-        <path d="M14 34V18L24 12L34 18V34" stroke="#5B7A94" stroke-width="2"/>
-        <path d="M14 34H34" stroke="#1B2430" stroke-width="2"/>
-        <path d="M20 34V24H28V34" stroke="#C7B9A0" stroke-width="2"/>
-      </svg>
+      <img src="logo.png" alt="يوني جروب" class="logo-mark" style="object-fit:contain;">
       <div>
         <span class="logo-text">يوني جروب</span>
         <span class="logo-sub">استشارات هندسية إنشائية</span>
@@ -538,17 +536,20 @@
       <ul class="contact-info">
         <li>
           <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M4 5H8L10 10L7.5 11.5C8.5 14 10 15.5 12.5 16.5L14 14L19 16V20C19 20.5 18.5 21 18 21C10 21 3 14 3 6C3 5.5 3.5 5 4 5Z" stroke="currentColor" stroke-width="1.6"/></svg>
-          <div><b>اتصل بنا</b><span>01000000000 (رقم مؤقت - برجاء التحديث)</span></div>
+          <div><b>اتصل بنا</b><span>01119115777</span></div>
         </li>
         <li>
           <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M3 6H21V18H3V6Z" stroke="currentColor" stroke-width="1.6"/><path d="M3 6L12 13L21 6" stroke="currentColor" stroke-width="1.6"/></svg>
-          <div><b>راسلنا</b><span>info@unigroup-eng.com (بريد مؤقت - برجاء التحديث)</span></div>
+          <div><b>راسلنا</b><span>info@unigroupc.com</span></div>
         </li>
         <li>
           <svg class="ic" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 19 14.5 19 9.5C19 5.9 15.9 3 12 3C8.1 3 5 5.9 5 9.5C5 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg>
-          <div><b>الموقع</b><span>القاهرة، جمهورية مصر العربية (عنوان مؤقت - برجاء التحديث)</span></div>
+          <div><b>الموقع</b><span>حدائق أكتوبر، ٦ أكتوبر، الجيزة</span></div>
         </li>
       </ul>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=29.9038938,31.0748274&z=16&output=embed" loading="lazy" title="موقع يوني جروب"></iframe>
+      </div>
     </div>
     <form class="contact-form" id="contactForm">
       <div class="form-row">
@@ -574,10 +575,7 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-logo">
-        <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-          <rect x="6" y="6" width="36" height="36" stroke="#FDFCFA" stroke-width="2"/>
-          <path d="M14 34V18L24 12L34 18V34" stroke="#5B7A94" stroke-width="2"/>
-        </svg>
+        <img src="logo.png" alt="يوني جروب" style="width:32px;height:32px;object-fit:contain;">
         <span class="logo-text">يوني جروب</span>
       </div>
       <ul class="footer-links">
